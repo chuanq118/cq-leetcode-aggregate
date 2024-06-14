@@ -14,13 +14,7 @@ public class Demo01 {
         System.out.println(dq1.peek());
         dq1.push(6);
         System.out.println(dq1.peek());
-        // dq1.peekLast()
-        // dq1.push();
-        // dq1.pop()
-        // dq1.peek()
-        // dq1.peekLast()
-        // dq1.isEmpty()
-        // dq1.clear();
+
         HashMap<Integer, Object> map = new HashMap<>();
         map.remove(21);
         PriorityQueue<Integer> PQ = new PriorityQueue<>();
