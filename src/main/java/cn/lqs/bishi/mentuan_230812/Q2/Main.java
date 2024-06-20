@@ -1,6 +1,11 @@
 
 import java.util.*;
 
+/**
+ * 错误原因：
+ * 索引下表搞错
+ * 在接受 x 和 y 时注意 -1 对齐索引
+ */
 public class Main{
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
