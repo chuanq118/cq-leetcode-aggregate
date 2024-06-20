@@ -7,26 +7,26 @@ public class Main {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         in.nextLine();
-        char[][] mat = new char[n][3];
-        for (int i = 0; i < n; i += 1) {
+        char[][] mat = new char[n * 3][3];
+        for (int i = 0; i < mat.length; i += 1) {
             String line = in.nextLine();
             for (int j = 0; j < 3; j++) {
                 mat[i][j] = line.charAt(j);
             }
         }
-        for (int i = 0; i < n; i += 3) {
+        for (int i = 0; i < mat.length; i += 3) {
             boolean blackWin = false;
             boolean whiteWin = false;
-            if(mat[i + 1][1] == '*' && mat[i + 1][0] == 'o' && mat[i + 1][2] == 'o') {
+            if (mat[i + 1][1] == '*' && mat[i + 1][0] == 'o' && mat[i + 1][2] == 'o') {
                 whiteWin = true;
             }
-            if(mat[i + 1][1] == 'o' && mat[i + 1][0] == '*' && mat[i + 1][2] == '*') {
+            if (mat[i + 1][1] == 'o' && mat[i + 1][0] == '*' && mat[i + 1][2] == '*') {
                 blackWin = true;
             }
-            if(mat[i + 1][1] == '*' && mat[i][1] == 'o' && mat[i + 2][1] == 'o') {
+            if (mat[i + 1][1] == '*' && mat[i][1] == 'o' && mat[i + 2][1] == 'o') {
                 whiteWin = true;
             }
-            if(mat[i + 1][1] == 'o' && mat[i][1] == '*' && mat[i + 2][1] == '*') {
+            if (mat[i + 1][1] == 'o' && mat[i][1] == '*' && mat[i + 2][1] == '*') {
                 blackWin = true;
             }
             // left mid
@@ -57,17 +57,18 @@ public class Main {
             if (mat[i + 2][1] == '*' && mat[i + 2][0] == 'o' && mat[i + 2][2] == 'o') {
                 whiteWin = true;
             }
-            if (blackWin && !whiteWin){
+            if (blackWin && !whiteWin) {
                 System.out.println("kou");
                 continue;
             }
-            if (whiteWin && !blackWin){
+            if (whiteWin && !blackWin) {
                 System.out.println("yukan");
                 continue;
             }
             System.out.println("draw");
         }
     }
+}
 //    public static void main(String[] args){
 //        Scanner in = new Scanner(System.in);
 //        int n = in.nextInt();
@@ -156,4 +157,3 @@ public class Main {
 //            System.out.println("draw");
 //        }
 //    }
-}
