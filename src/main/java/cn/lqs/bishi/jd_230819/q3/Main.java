@@ -2,6 +2,9 @@ package cn.lqs.bishi.jd_230819.q3;
 
 import java.util.*;
 
+/**
+ * 当前解法: 超时
+ */
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -20,37 +23,44 @@ public class Main {
                 mat[i][j] = line.charAt(j);
             }
         }
-//        for(int i = 1; i < mat.length; i++) {
-//            if(mat[i][0] == '*'){
-//                minStepMat[i][0] = Integer.MAX_VALUE;
-//                continue;
-//            }
-//            minStepMat[i][0] = minStepMat[i - 1][0];
-//        }
-//        for(int j = 1; j < mat[0].length; j++) {
-//            if(mat[0][j] == '*'){
-//                minStepMat[0][j] = Integer.MAX_VALUE;
-//                continue;
-//            }
-//            minStepMat[0][j] = minStepMat[0][j - 1];
-//        }
-//        for (int i = 1; i < n; i++) {
-//            for (int j = 1; j < m; j++) {
-//                if (mat[i][j] == '*') {
-//                    minStepMat[i][j] = Integer.MAX_VALUE;
-//                    continue;
-//                }
-//            }
-//        }
+        Map<String, Long> cache = new HashMap<>();
+        System.out.println(dfs(n - 1, m - 1, mat, cache));
     }
 
-    private static long dfs(int x, int y, char[][] mat) {
+    private static long dfs(int x, int y, char[][] mat, Map<String, Long> cache) {
+        if (x == 0 && y == 0) {
+            return 0;
+        }
         if (x < 0 || y < 0 || x >= mat.length || y >= mat[0].length || mat[x][y] == '*') {
             return Integer.MAX_VALUE;
         }
-        for(int px = x - 1; px <= x + 1; px++) {
-
+        String key = x + "," + y;
+        if (cache.containsKey(key)) {
+            return cache.get(key);
         }
-        return 0;
+        long res = Integer.MAX_VALUE;
+        for(int px = x - 1; px >= 0; px -= 1) {
+            long pVal = dfs(px, y, mat, cache);
+            if (pVal == Integer.MAX_VALUE) {
+                break;
+            }
+            res = Math.min(pVal + 1, res);
+        }
+        for(int py = y - 1; py >= 0; py -= 1) {
+            long pVal = dfs(x, py, mat, cache);
+            if (pVal == Integer.MAX_VALUE) {
+                break;
+            }
+            res = Math.min(pVal + 1, res);
+        }
+        for(int px = x - 1, py = y - 1; px >= 0 && py >= 0; px -= 1, py -= 1) {
+            long pVal = dfs(px, py, mat, cache);
+            if (pVal == Integer.MAX_VALUE) {
+                break;
+            }
+            res = Math.min(pVal + 1, res);
+        }
+        cache.put(key, res);
+        return res;
     }
 }
