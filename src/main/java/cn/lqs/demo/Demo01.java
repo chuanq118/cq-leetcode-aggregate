@@ -18,6 +18,8 @@ public class Demo01 {
         PriorityQueue<Integer> PQ = new PriorityQueue<>();
         // PQ.offer()
         // PQ.poll()
+//        PQ.peek()
+//        PQ.clear();
 
         StringBuilder sb = new StringBuilder();
         sb.insert(0, 1);
