@@ -1,10 +1,14 @@
 package cn.lqs.demo;
 
+import java.util.Stack;
+
 public class Demo03 {
 
     public static void main(String[] args) throws Exception{
-        toString("aaa12312");
+//        toString("aaa12312");
 //        StringBuilder
+        Stack<Integer> stack = new Stack<>();
+//        stack.peek()
     }
 
 
