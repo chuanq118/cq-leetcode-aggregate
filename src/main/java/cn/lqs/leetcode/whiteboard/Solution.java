@@ -1,28 +1,18 @@
 class Solution {
-    public String addStrings(String num1, String num2) {
-        StringBuilder ans = new StringBuilder();
-        int up = 0;
-        int i1 = num1.length() - 1, i2 = num2.length() - 1;
-        for(; i1 >= 0 && i2 >= 0; i1 -= 1, i2 -= 1){
-            int sum = (num1.charAt(i1) - '0') + (num2.charAt(i2) - '0') + up;
-            up = sum > 9 ? 1 : 0;
-            ans.append(up == 0 ? sum : sum % 10);
+    public int mySqrt(int x) {
+        if (x == 0) return 0;
+        if (x < 4) return 1;
+        int l = 1;
+        int r = x / 2;
+        while (l <= r) {
+            int m = ((r - l) >> 1) + l;
+            long ms = (long) m * m;
+            if (ms <= x) {
+                l = m + 1;
+            } else {
+                r = m - 1;
+            }
         }
-        while(i1 >= 0){
-            int sum = (num1.charAt(i1) - '0') + up;
-            up = sum > 9 ? 1 : 0;
-            ans.append(up == 0 ? sum : sum % 10);
-            i1 -= 1;
-        }
-        while(i2 >= 0){
-            int sum = (num2.charAt(i2) - '0') + up;
-            up = sum > 9 ? 1 : 0;
-            ans.append(up == 0 ? sum : sum % 10);
-            i2 -= 1;
-        }
-        if(up > 0){
-            ans.append('1');
-        }
-        return ans.reverse().toString();
+        return l - 1;
     }
 }
