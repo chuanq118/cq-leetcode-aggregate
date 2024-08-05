@@ -1,9 +1,6 @@
 package cn.lqs.demo;
 
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class Demo01 {
     public static void main(String[] args) {
@@ -15,11 +12,14 @@ public class Demo01 {
         dq1.push(6);
         System.out.println(dq1.peek());
 
+
         HashMap<Integer, Object> map = new HashMap<>();
         map.remove(21);
         PriorityQueue<Integer> PQ = new PriorityQueue<>();
         // PQ.offer()
         // PQ.poll()
+//        PQ.peek()
+//        PQ.clear();
 
         StringBuilder sb = new StringBuilder();
         sb.insert(0, 1);
@@ -29,5 +29,9 @@ public class Demo01 {
 
         // ThreadLocal
         char res = 'a' - 32;
+        int[][] mat = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        Arrays.sort(mat, (prev, next) -> {
+            return 0;
+        });
     }
 }
