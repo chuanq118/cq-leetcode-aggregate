@@ -4,6 +4,8 @@ target/
 !**/src/test/**/target/
 ### 忽略本地 java 测试文件
 src/main/java/local
+src/main/java/cn/lqs/examples
+src/main/java/cn/lqs/demo
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
