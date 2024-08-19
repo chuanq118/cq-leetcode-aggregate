@@ -1,4 +1,4 @@
-package cn.lqs.interview.design;
+package interview.design;
 
 public class 单例模式_双重锁 {
 

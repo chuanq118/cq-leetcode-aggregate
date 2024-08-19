@@ -1,4 +1,4 @@
-package cn.lqs.interview.recursion;
+package interview.recursion;
 
 public class 判断数字是否在斐波那契数列 {
 

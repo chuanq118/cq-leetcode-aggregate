@@ -1,4 +1,4 @@
-package cn.lqs.interview.recursion;
+package interview.recursion;
 
 public class 汉诺塔 {
 

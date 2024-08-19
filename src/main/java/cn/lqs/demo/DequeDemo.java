@@ -9,6 +9,7 @@ public class DequeDemo {
         dq.offer(1);
         dq.offer(2);
         dq.offer(3);
+//        dq.peek()
         System.out.println(dq.peek());
         // System.out.println(dq.top());
         System.out.println(dq.peekLast());

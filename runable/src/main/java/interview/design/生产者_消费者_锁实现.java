@@ -1,4 +1,4 @@
-package cn.lqs.interview.design;
+package interview.design;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -1,4 +1,4 @@
-package cn.lqs.interview.design;
+package interview.design;
 
 public enum 单例模式_枚举类实现 {
 

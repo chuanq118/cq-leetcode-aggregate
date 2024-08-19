@@ -1,4 +1,4 @@
-package cn.lqs.interview.recursion;
+package interview.recursion;
 
 public class N的阶乘 {
     public static void main(String[] args) {

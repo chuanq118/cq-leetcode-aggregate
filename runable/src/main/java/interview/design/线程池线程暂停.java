@@ -1,4 +1,4 @@
-package cn.lqs.interview.design;
+package interview.design;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;

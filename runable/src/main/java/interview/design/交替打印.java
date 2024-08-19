@@ -1,4 +1,4 @@
-package cn.lqs.interview.design;
+package interview.design;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;

@@ -1,4 +1,4 @@
-package cn.lqs.interview.basic;
+package interview.basic;
 
 public class 粉刷房子 {
 

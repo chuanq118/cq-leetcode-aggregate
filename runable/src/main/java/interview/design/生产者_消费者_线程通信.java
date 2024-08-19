@@ -1,4 +1,4 @@
-package cn.lqs.interview.design;
+package interview.design;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -18,6 +18,7 @@ public class 生产者_消费者_线程通信 {
                     while (QUE.size() == MAX_SIZE) {
                         try {
                             System.out.println("队列已满");
+                            // wait 会释放锁
                             QUE.wait();
                         } catch (InterruptedException e) {
                             System.out.println("已满队列被唤醒");
